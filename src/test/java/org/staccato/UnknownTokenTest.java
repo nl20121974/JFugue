@@ -19,7 +19,6 @@
 
 package org.staccato;
 
-import javax.sound.midi.MidiSystem;
 import org.jfugue.parser.ParserException;
 import org.jfugue.player.Player;
 import org.junit.Ignore;

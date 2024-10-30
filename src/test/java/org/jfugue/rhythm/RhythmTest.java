@@ -34,7 +34,8 @@ public class RhythmTest {
     	assertTrue(rhythm.getPattern().toString().equals("V9 L0 Ri [BASS_DRUM]i Rs [BASS_DRUM]s [ACOUSTIC_SNARE]i Rs [ACOUSTIC_SNARE]s [PEDAL_HI_HAT]i [PEDAL_HI_HAT]s Rs [CRASH_CYMBAL_1]i [CRASH_CYMBAL_1]s Rs Rs [HAND_CLAP]s"));
     }
 
-    @Test
+    @SuppressWarnings("serial")
+	@Test
     public void testReplacingWithProvidedRhythmKit() {
     	Rhythm rhythm = new Rhythm(); 
     	rhythm.setRhythmKit(new HashMap<Character, String>() {{ 

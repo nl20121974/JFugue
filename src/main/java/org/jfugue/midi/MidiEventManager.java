@@ -146,7 +146,11 @@ final class MidiEventManager extends TrackTimeManager
         return this.resolutionTicksPerBeat;
     }
     
-    /**
+    public int getTempoBeatsPerMinute() {
+		return tempoBeatsPerMinute;
+	}
+
+	/**
      * Finishes the sequence by adding an End of Track meta message (0x2F) to each track 
      * that has been used in this sequence. 
      */

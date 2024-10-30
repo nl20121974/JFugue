@@ -21,9 +21,6 @@ package org.staccato;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.Map;
-
-import org.jfugue.player.Player;
 import org.jfugue.testtools.parser.JFugueTestHelper;
 import org.junit.Test;
 

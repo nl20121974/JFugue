@@ -289,7 +289,7 @@ public class Intervals implements PatternProducer, NoteProducer
 		return new Intervals(buddy.toString().trim());
 	}
 	
-	private static String[] CANDIDATE_INTERVALS = new String[] { "b1", "1", "#1", "b2", "2", "#2", "b3", "3", "#3", 
+	public static String[] CANDIDATE_INTERVALS = new String[] { "b1", "1", "#1", "b2", "2", "#2", "b3", "3", "#3", 
 	                                                             "b4", "4", "#4", "b5", "5", "#5", "b6", "6", "#6",
 	                                                             "b7", "7", "#7", "b8", "8", "#8", "b9", "9", "#9",
 	                                                             "b10", "10", "#10", "b11", "11", "#11", "b12", "12", "#12", 

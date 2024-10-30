@@ -21,7 +21,6 @@ package org.jfugue.pattern;
 
 import static org.junit.Assert.assertTrue;
 
-import org.jfugue.player.Player;
 import org.jfugue.rhythm.Rhythm;
 import org.junit.Test;
 

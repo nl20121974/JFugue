@@ -54,7 +54,7 @@ public class GetPatternStats {
     private List<Number> restDurations = new ArrayList<Number>();
     private List<Byte> attacks = new ArrayList<Byte>();
     private List<Byte> decays = new ArrayList<Byte>();
-    private List<GetPatternStats.TimeEvent> musicEvents= new ArrayList<GetPatternStats.TimeEvent>();
+    private List<GetPatternStats.TimeEvent<?>> musicEvents= new ArrayList<GetPatternStats.TimeEvent<?>>();
     private int rhythm, measures = 0;
     private double tickPos = 0;
     private Key key = new Key("Cmaj");
@@ -259,9 +259,9 @@ public class GetPatternStats {
      * 
      */
     private void sortTimeEvents(){
-      Collections.sort(musicEvents, new Comparator<GetPatternStats.TimeEvent>() {
+      Collections.sort(musicEvents, new Comparator<GetPatternStats.TimeEvent<?>>() {
           @Override
-          public int compare(GetPatternStats.TimeEvent eg1, GetPatternStats.TimeEvent eg2) {
+          public int compare(GetPatternStats.TimeEvent<?> eg1, GetPatternStats.TimeEvent<?> eg2) {
               if (eg1.time < eg2.time){
                   return -1;
               }
@@ -280,9 +280,9 @@ public class GetPatternStats {
      */
     private boolean checkHarmonics(Note note){ 
         
-        List keyScale;
-        List<List> majors = new ArrayList<List>();
-        List<List> minors = new ArrayList<List>();
+        List<?> keyScale;
+        List<List<?>> majors = new ArrayList<>();
+        List<List<?>> minors = new ArrayList<>();
         majors.add(Arrays.asList(0,2,4,5,7,9,11));   //C D E F G A B no flats or sharps
         majors.add(Arrays.asList(1,3,5,5,8,10,0));   //Db Eb F Gb Ab Bb C 5 flats //C# D# E# F# G# A# B# 7 sharps     
         majors.add(Arrays.asList(2,4,6,7,9,11,1 ));  //D E F# G A B C# 2 sharps
@@ -377,7 +377,7 @@ public class GetPatternStats {
         sortTimeEvents();
         
         //Find first note event and get first stats for relative calculations
-        for (GetPatternStats.TimeEvent t : musicEvents){
+        for (GetPatternStats.TimeEvent<?> t : musicEvents){
             if (t.getEvent() instanceof Note || t.getEvent() instanceof org.jfugue.theory.Chord){
                 Note note = (Note)t.getEvent(); 
                 interval = note.getValue(); //set interval to fist note value
@@ -387,7 +387,7 @@ public class GetPatternStats {
                 break;
             }
         }    
-        for (GetPatternStats.TimeEvent t : musicEvents){
+        for (GetPatternStats.TimeEvent<?> t : musicEvents){
             Note note;
             //If event is note, collect stats
             if (t.getEvent() instanceof Note || t.getEvent() instanceof org.jfugue.theory.Chord){

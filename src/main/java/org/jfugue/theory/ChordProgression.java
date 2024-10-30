@@ -24,7 +24,6 @@ import org.jfugue.pattern.Pattern;
 import org.jfugue.pattern.PatternProducer;
 import org.jfugue.provider.KeyProviderFactory;
 import org.jfugue.provider.NoteProviderFactory;
-import org.staccato.StaccatoUtil;
 
 public class ChordProgression implements PatternProducer {
     private String[] progressionElements;

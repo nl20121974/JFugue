@@ -404,7 +404,8 @@ public class Rhythm implements PatternProducer
     	}
     }
     
-    public static final Map<Character, String> DEFAULT_RHYTHM_KIT = new HashMap<Character, String>() {{
+    @SuppressWarnings("serial")
+	public static final Map<Character, String> DEFAULT_RHYTHM_KIT = new HashMap<Character, String>() {{
         put('.', "Ri");
         put('O', "[BASS_DRUM]i");
         put('o', "Rs [BASS_DRUM]s");

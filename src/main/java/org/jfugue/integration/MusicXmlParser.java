@@ -28,8 +28,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-import javax.xml.parsers.ParserConfigurationException;
-
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Element;
@@ -61,11 +59,13 @@ public final class MusicXmlParser extends Parser {
 
 	private static class MidiInstrument {
 		
-		private String id;
-		private String channel;
-		private String name;
+		public final String id;
+		public final String channel;
+		public final String name;
+		@SuppressWarnings("unused")
 		private String bank;
 		private byte program;
+		@SuppressWarnings("unused")
 		private String unpitched;
 
 		public MidiInstrument(String id, String channel, String name , String bank, byte program, String unpitched) {
@@ -215,7 +215,7 @@ public final class MusicXmlParser extends Parser {
 	}
 
 	// CONSTRUCTOR
-	public MusicXmlParser() throws ParserConfigurationException {
+	public MusicXmlParser() throws Exception {
 		xomBuilder = new Builder();
 
 		// Set up MusicXML default values
@@ -594,7 +594,7 @@ public final class MusicXmlParser extends Parser {
 
 				Element display_octave = element.getFirstChildElement("display-octave");
 				if (display_octave != null) {
-					Byte octave_byte = new Byte(display_octave.getValue());
+					Byte octave_byte = Byte.valueOf(display_octave.getValue());
 					noteNumber += octave_byte * 12;
 				}
 			} else if (tagName.equals("pitch")) {
@@ -814,6 +814,6 @@ public final class MusicXmlParser extends Parser {
 	 * @return ppm
 	 */
 	public static int BPMtoPPM(float bpm) {
-		return (new Float((60.f * 240.f) / bpm).intValue());
+		return Float.valueOf((60.f * 240.f) / bpm).intValue();
 	}
 }

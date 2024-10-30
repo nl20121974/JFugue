@@ -46,7 +46,7 @@ public class CreateChordMid
 		player = new Player();
 	}
 	
-	private static void save(PatternProducer patternProducer, String filename)
+	public static void save(PatternProducer patternProducer, String filename)
 	{
         try {
 			MidiFileManager.save(player.getSequence(patternProducer), new File(filename));

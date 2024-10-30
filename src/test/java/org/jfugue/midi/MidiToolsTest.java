@@ -19,7 +19,7 @@
 
 package org.jfugue.midi;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.io.File;
 import java.util.List;
@@ -28,9 +28,7 @@ import java.util.Map;
 import javax.sound.midi.MidiMessage;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Sequence;
-
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.*;
 
 public class MidiToolsTest {
 	@Test
@@ -38,7 +36,6 @@ public class MidiToolsTest {
 		assertTrue(true);
 	}
 	
-	@Ignore 
 	public void testSortMessagesByTick() {
 //		Pattern pattern = new Pattern("C D E F G A B");
 //		Sequence sequence = new Player().getSequence(pattern);

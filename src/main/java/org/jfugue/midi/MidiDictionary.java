@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MidiDictionary {
+	@SuppressWarnings("serial")
 	public static Map<Byte, String> INSTRUMENT_BYTE_TO_STRING = new HashMap<Byte, String>() {{
 		put((byte)0, "Piano");
 		put((byte)1, "Bright_Acoustic");
@@ -165,7 +166,8 @@ public class MidiDictionary {
 		put((byte)126, "Applause");
 		put((byte)127, "Gunshot");	
 	}};
-	
+
+	@SuppressWarnings("serial")
 	public static Map<String, Byte> INSTRUMENT_STRING_TO_BYTE = new HashMap<String, Byte>() {{
 		put("PIANO", (byte)0);
 		put("BRIGHT_ACOUSTIC", (byte)1);
@@ -310,6 +312,7 @@ public class MidiDictionary {
 		
 	}};
 
+	@SuppressWarnings("serial")
 	public static Map<Integer, String> TEMPO_INT_TO_STRING = new HashMap<Integer, String>() {{
 		put(40, "GRAVE");
 		put(45, "LARGO");
@@ -327,6 +330,7 @@ public class MidiDictionary {
 		put(220, "PRETISSIMO");
 	}};
 
+	@SuppressWarnings("serial")
 	public static Map<String, Integer> TEMPO_STRING_TO_INT = new HashMap<String, Integer>() {{
 		put("GRAVE", 40);
 		put("LARGO", 45);
@@ -343,7 +347,8 @@ public class MidiDictionary {
 		put("PRESTO", 180);
 		put("PRETISSIMO", 220);
 	}};
-	
+
+	@SuppressWarnings("serial")
 	public static Map<Integer, String> CONTROLLER_INT_TO_STRING = new HashMap<Integer, String>() {{
 	    put(0, "BANK_SELECT_COARSE");
 	    put(1, "MOD_WHEEL_COARSE");
@@ -448,7 +453,8 @@ public class MidiDictionary {
 	    put(0, "OFF");
 	    put(64, "DEFAULT");	    
 	}};
-	
+
+	@SuppressWarnings("serial")
 	public static Map<String, Integer> CONTROLLER_STRING_TO_INT = new HashMap<String, Integer>() {{
 	    put("BANK_SELECT_COARSE", 0);
 	    put("MOD_WHEEL_COARSE", 1);

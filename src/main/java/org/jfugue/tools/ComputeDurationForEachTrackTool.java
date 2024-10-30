@@ -39,7 +39,7 @@ public class ComputeDurationForEachTrackTool extends ParserListenerAdapter
         currentTrack = 0;
     }
 
-    @Override
+	@Override
     public void onTrackChanged(byte track) {
         this.currentTrack = track;
     }
@@ -59,5 +59,9 @@ public class ComputeDurationForEachTrackTool extends ParserListenerAdapter
     public double[] getDurations() {
         return this.durations;
     }
+
+    public double getDurationOfCurrentFirstNote() {
+		return durationOfCurrentFirstNote;
+	}
 }
 

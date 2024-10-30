@@ -61,7 +61,31 @@ public class MusicXmlParserListener implements ParserListener
     	root.appendChild(elPartList);
     }	
 
-    /**
+    public static int getMusicxmldivisions() {
+		return MUSICXMLDIVISIONS;
+	}
+
+	public static double getWhole() {
+		return WHOLE;
+	}
+
+	public static double getQuarter() {
+		return QUARTER;
+	}
+
+	public Element getElCurMeasure() {
+		return elCurMeasure;
+	}
+
+	public Element getElCurScorePart() {
+		return elCurScorePart;
+	}
+
+	public Element getElCurPart() {
+		return elCurPart;
+	}
+
+	/**
      * creates the internal <code>Document</code> with the top-level 
      * <code>Element</code> and then creates the MusicXML file (as a 
      * string) from the internal <code>Document</code>

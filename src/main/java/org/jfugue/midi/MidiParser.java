@@ -53,7 +53,11 @@ public class MidiParser extends Parser
         auxilliaryParsers = new ArrayList<AuxilliaryMidiParser>();
     }
     
-    public void parse(Sequence sequence) {
+    public float getDivisionType() {
+		return divisionType;
+	}
+
+	public void parse(Sequence sequence) {
         this.startParser();
         
         this.divisionType = sequence.getDivisionType();
@@ -307,15 +311,15 @@ public class MidiParser extends Parser
     // Formulas and converters
     //
     
-    private double getDurationInBeats(long durationInTicks) {
+    public double getDurationInBeats(long durationInTicks) {
         return durationInTicks / (double)this.resolutionTicksPerBeat / 4.0d;  
     }
     
-    private long ticksToMs(long ticks) {
+    public long ticksToMs(long ticks) {
     	return (long)((ticks / this.resolutionTicksPerBeat) * (1.0d / this.tempoBPM) * MidiDefaults.MS_PER_MIN); 
     }
     
-    private long msToTicks(long ms) {
+    public long msToTicks(long ms) {
     	return (long)((ms / MidiDefaults.MS_PER_MIN) * this.tempoBPM * this.resolutionTicksPerBeat); 
     }
 

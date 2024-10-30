@@ -30,7 +30,6 @@ import javax.sound.midi.MidiUnavailableException;
 import org.jfugue.midi.MidiDefaults;
 import org.jfugue.midi.TrackTimeManager;
 import org.jfugue.parser.ParserListener;
-import org.jfugue.player.Player;
 import org.jfugue.theory.Chord;
 import org.jfugue.theory.Note;
 
